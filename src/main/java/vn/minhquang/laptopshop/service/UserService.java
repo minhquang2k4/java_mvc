@@ -1,4 +1,4 @@
-package vn.hoidanit.laptopshop.service;
+package vn.minhquang.laptopshop.service;
 
 import org.springframework.stereotype.Service;
 

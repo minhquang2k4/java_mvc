@@ -1,39 +1,28 @@
-# 🚀 Java Spring MVC - Xây Dựng FullStack Website với Spring Boot
+# Laptopshop
 
-This is the **starter project** for the **Java Spring MVC - Xây Dựng FullStack Website với Spring Boot** course by **Hỏi Dân IT**.
+Laptopshop là một dự án mẫu được xây dựng bằng Java, sử dụng kiến trúc MVC (Model-View-Controller) và tích hợp với Maven để quản lý các thư viện và build project. Dự án này sử dụng Spring Boot để phát triển ứng dụng web nhanh chóng và hiệu quả.
 
----
+## Công nghệ sử dụng
 
-## 📢 IMPORTANT NOTICE  
-This source code is provided **exclusively for enrolled students** in this course.  
-❌ **DO NOT UPLOAD this code to GitHub (Public), GitLab, or any other public repository.**  
-❌ **DO NOT SHARE this project on forums, Telegram, Discord, or social media.**  
-✅ You **can use Git** for personal learning, but **your repository must be PRIVATE**.
+- **Java 17**: Ngôn ngữ lập trình chính.
+- **Spring Boot**: Framework để xây dựng ứng dụng web.
+- **Maven**: Công cụ quản lý dự án và phụ thuộc.
+- **MySQL**: Cơ sở dữ liệu quan hệ.
+- **JSP**: Công nghệ hiển thị giao diện.
+- **Spring Security**: Bảo mật ứng dụng.
 
-💡 **Violators may face:**  
-- DMCA takedown requests.  
-- Account suspension on learning platforms.  
-- Legal action in serious cases.  
 
-📩 For inquiries, contact: **admin@hoidanit.vn**
+## Chức năng chính
 
----
+- Hiển thị giao diện người dùng cơ bản.
+- Kết nối cơ sở dữ liệu MySQL.
+- Cấu hình bảo mật cơ bản với Spring Security.
+- Sử dụng JSP làm công cụ hiển thị giao diện.
 
-## 📖 How to Use This Project?
+## Hướng dẫn chạy dự án
 
-===
-Môi trường chạy dự án: Java 17
-
-## Về tác giả
-Mọi thông tin về Tác giả Hỏi Dân IT, các bạn có thể tìm kiếm tại đây:
-
-Website chính thức: https://hoidanit.vn/
-
-Youtube “Hỏi Dân IT” : https://www.youtube.com/@hoidanit
-
-Tiktok “Hỏi Dân IT” :  https://www.tiktok.com/@hoidanit
-
-Fanpage “Hỏi Dân IT” : https://www.facebook.com/askITwithERIC/
-
-Udemy Hỏi Dân IT: https://www.udemy.com/user/eric-7039/
-
+1. Cài đặt **Java 17** và **Maven** trên máy tính.
+2. Cấu hình cơ sở dữ liệu MySQL và cập nhật thông tin trong file `application.properties`.
+3. Chạy lệnh sau để khởi động ứng dụng:
+   ```bash
+   ./mvnw spring-boot:run
