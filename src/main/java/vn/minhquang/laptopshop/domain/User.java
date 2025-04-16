@@ -1,7 +1,19 @@
 package vn.minhquang.laptopshop.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+// @Table(name = "user")
 public class User {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  // @GeneratedValue(strategy = GenerationType.UUID)
   private long id;
+
   private String email;
   private String password;
   private String fullname;
