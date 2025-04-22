@@ -1,4 +1,4 @@
-package vn.minhquang.laptopshop.domain;
+package vn.minhquang.laptopshop.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 
 @Entity
 // @Table(name = "user")
-public class User {
+public class UserEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

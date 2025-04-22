@@ -1,13 +1,12 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Management</title>
+  <title>Edit User</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
@@ -20,7 +19,6 @@
     body {
       background-color: #f8f9fa;
     }
-
     .form-container {
       background-color: #ffffff;
       border-radius: 10px;
@@ -29,106 +27,114 @@
       margin-top: 2rem;
       margin-bottom: 2rem;
     }
-
     .form-header {
       border-bottom: 2px solid #f1f1f1;
       margin-bottom: 1.5rem;
       padding-bottom: 1rem;
     }
-
     .form-control:focus {
       border-color: #6c757d;
       box-shadow: 0 0 0 0.25rem rgba(108, 117, 125, 0.25);
     }
-
     .btn-primary {
       background-color: #5a5a5a;
       border-color: #5a5a5a;
       padding: 0.5rem 2rem;
       font-weight: 500;
     }
-
     .btn-primary:hover {
       background-color: #4a4a4a;
       border-color: #4a4a4a;
     }
-
     .input-group-text {
       background-color: #f8f9fa;
       border-right: none;
     }
-
     .form-control {
       border-left: none;
     }
-
     .form-label {
       font-weight: 500;
       color: #495057;
     }
+    .btn-secondary {
+      padding: 0.5rem 2rem;
+      font-weight: 500;
+    }
+    .user-avatar {
+      width: 80px;
+      height: 80px;
+      background-color: #e9ecef;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem auto;
+      font-size: 2rem;
+      color: #6c757d;
+    }
   </style>
 </head>
-
 <body>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8 col-lg-6 form-container">
         <div class="form-header text-center">
-          <h2 class="fw-bold"><i class="bi bi-person-plus-fill me-2"></i>Create New User</h2>
-          <p class="text-muted">Please fill in the user details below</p>
+          <div class="user-avatar">
+            <i class="bi bi-person"></i>
+          </div>
+          <h2 class="fw-bold"><i class="bi bi-pencil-square me-2"></i>Edit User</h2>
+          <p class="text-muted">Update user information below</p>
         </div>
-
-        <form action="/admin/user/create" method="post">
+        
+        <form action="/admin/user/edit/${user.id}" method="post">
           <div class="mb-4">
             <label for="fullname" class="form-label">Full Name</label>
             <div class="input-group">
               <span class="input-group-text"><i class="bi bi-person"></i></span>
-              <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter full name"
-                required>
+              <input type="text" class="form-control" id="fullname" name="fullname" value="${user.fullname}" required>
             </div>
           </div>
-
+          
           <div class="mb-4">
             <label for="email" class="form-label">Email Address</label>
             <div class="input-group">
               <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address"
-                required>
+              <input type="email" class="form-control" id="email" name="email" value="${user.email}" required>
             </div>
           </div>
-
+          
           <div class="mb-4">
             <label for="password" class="form-label">Password</label>
             <div class="input-group">
               <span class="input-group-text"><i class="bi bi-lock"></i></span>
-              <input type="password" class="form-control" id="password" name="password"
-                placeholder="Enter password" required>
+              <input type="password" class="form-control" id="password" name="password" value="${user.password}" required>
               <button class="btn btn-outline-secondary" type="button" id="togglePassword">
                 <i class="bi bi-eye" id="toggleIcon"></i>
               </button>
             </div>
-            <div class="form-text">Password must be at least 8 characters long</div>
+            <div class="form-text">Leave unchanged to keep current password</div>
           </div>
-
+          
           <div class="mb-4">
             <label for="address" class="form-label">Address</label>
             <div class="input-group">
               <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
-              <input type="text" class="form-control" id="address" name="address" placeholder="Enter address">
+              <input type="text" class="form-control" id="address" name="address" value="${user.address}">
             </div>
           </div>
-
+          
           <div class="mb-4">
             <label for="phone" class="form-label">Phone Number</label>
             <div class="input-group">
               <span class="input-group-text"><i class="bi bi-telephone"></i></span>
-              <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter phone number">
+              <input type="text" class="form-control" id="phone" name="phone" value="${user.phone}">
             </div>
           </div>
-
+          
           <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
-            <button type="button" class="btn btn-outline-secondary me-md-2">Cancel</button>
-            <button type="submit" class="btn btn-primary">Create User</button>
+            <a href="/admin/user" class="btn btn-secondary me-md-2">Cancel</a>
+            <button type="submit" class="btn btn-primary">Update User</button>
           </div>
         </form>
       </div>
@@ -137,10 +143,10 @@
 
   <script>
     // Toggle password visibility
-    document.getElementById('togglePassword').addEventListener('click', function () {
+    document.getElementById('togglePassword').addEventListener('click', function() {
       const passwordInput = document.getElementById('password');
       const toggleIcon = document.getElementById('toggleIcon');
-
+      
       if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
         toggleIcon.classList.remove('bi-eye');
@@ -151,7 +157,22 @@
         toggleIcon.classList.add('bi-eye');
       }
     });
+
+    // Initialize first letter avatar if no image
+    document.addEventListener('DOMContentLoaded', function() {
+      const userAvatar = document.querySelector('.user-avatar');
+      const fullName = "${user.fullname}";
+      
+      if (fullName && fullName.length > 0) {
+        const initials = fullName.split(' ')
+          .map(name => name.charAt(0))
+          .join('')
+          .toUpperCase()
+          .substring(0, 2);
+        
+        userAvatar.innerHTML = initials;
+      }
+    });
   </script>
 </body>
-
 </html>
