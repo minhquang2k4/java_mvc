@@ -15,65 +15,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <style>
-    body {
-      background-color: #f8f9fa;
-    }
-    .form-container {
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-      padding: 2rem;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-    }
-    .form-header {
-      border-bottom: 2px solid #f1f1f1;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-    }
-    .form-control:focus {
-      border-color: #6c757d;
-      box-shadow: 0 0 0 0.25rem rgba(108, 117, 125, 0.25);
-    }
-    .btn-primary {
-      background-color: #5a5a5a;
-      border-color: #5a5a5a;
-      padding: 0.5rem 2rem;
-      font-weight: 500;
-    }
-    .btn-primary:hover {
-      background-color: #4a4a4a;
-      border-color: #4a4a4a;
-    }
-    .input-group-text {
-      background-color: #f8f9fa;
-      border-right: none;
-    }
-    .form-control {
-      border-left: none;
-    }
-    .form-label {
-      font-weight: 500;
-      color: #495057;
-    }
-    .btn-secondary {
-      padding: 0.5rem 2rem;
-      font-weight: 500;
-    }
-    .user-avatar {
-      width: 80px;
-      height: 80px;
-      background-color: #e9ecef;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem auto;
-      font-size: 2rem;
-      color: #6c757d;
-    }
-  </style>
+
+  <link rel="stylesheet" href="/css/edit-user.css">
+
 </head>
 <body>
   <div class="container">

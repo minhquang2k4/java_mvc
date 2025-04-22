@@ -1,0 +1,95 @@
+
+body {
+  background-color: #f8f9fa;
+}
+.user-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.user-header {
+  border-bottom: 2px solid #f1f1f1;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+}
+.btn-primary {
+  background-color: #5a5a5a;
+  border-color: #5a5a5a;
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+}
+.btn-primary:hover {
+  background-color: #4a4a4a;
+  border-color: #4a4a4a;
+}
+.btn-warning {
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+}
+.btn-danger {
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+}
+.btn-secondary {
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+}
+.user-avatar {
+  width: 100px;
+  height: 100px;
+  background-color: #e9ecef;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+  font-size: 2.5rem;
+  color: #6c757d;
+}
+.user-info {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.info-item {
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+.info-item:last-child {
+  margin-bottom: 0;
+}
+.info-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #e9ecef;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  color: #6c757d;
+}
+.info-label {
+  font-weight: 600;
+  color: #495057;
+  width: 80px;
+}
+.info-value {
+  color: #212529;
+  flex-grow: 1;
+}
+.user-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+.delete-btn:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
