@@ -6,13 +6,13 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import vn.minhquang.laptopshop.entity.UserEntity;
+import vn.minhquang.laptopshop.domain.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserEntity, Long> {
-  UserEntity save(UserEntity user);
-  List<UserEntity> findAll();
-  List<UserEntity> findAllByEmail(String email);
-  Optional<UserEntity> findById(Long id);
+public interface UserRepository extends JpaRepository<User, Long> {
+  User save(User user);
+  List<User> findAll();
+  List<User> findAllByEmail(String email);
+  Optional<User> findById(Long id);
   void deleteById(Long id);
 }

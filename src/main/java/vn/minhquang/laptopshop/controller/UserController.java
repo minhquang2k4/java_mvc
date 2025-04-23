@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import vn.minhquang.laptopshop.entity.UserEntity;
+import vn.minhquang.laptopshop.domain.User;
 import vn.minhquang.laptopshop.service.UserService;
 
 import java.util.List;
@@ -37,7 +37,7 @@ public class UserController {
       @RequestParam(name = "size", defaultValue = "10") int size,
       Model model) {
     
-    Page<UserEntity> userPage = this.userService.handleGetAllUsersWithPagination(PageRequest.of(page, size));
+    Page<User> userPage = this.userService.handleGetAllUsersWithPagination(PageRequest.of(page, size));
     
     model.addAttribute("users", userPage.getContent());
     model.addAttribute("currentPage", page);
@@ -54,7 +54,7 @@ public class UserController {
   }
 
   @RequestMapping(value = "/admin/user/create", method = RequestMethod.POST)
-  public String createUserPage(UserEntity user) {
+  public String createUserPage(User user) {
     System.out.println(user.toString());
     this.userService.handleSaveUser(user);
     return "redirect:/admin/user";
@@ -62,7 +62,7 @@ public class UserController {
 
   @RequestMapping("/admin/user/view/{id}")
   public String viewUser(@PathVariable("id") Long id, Model model) {
-    Optional<UserEntity> userOptional = this.userService.handleGetUserById(id);
+    Optional<User> userOptional = this.userService.handleGetUserById(id);
     if (userOptional.isPresent()) {
       model.addAttribute("user", userOptional.get());
       return "admin/user/view";
@@ -73,7 +73,7 @@ public class UserController {
 
   @RequestMapping("/admin/user/edit/{id}")
   public String getEditUserPage(@PathVariable("id") Long id, Model model) {
-    Optional<UserEntity> userOptional = this.userService.handleGetUserById(id);
+    Optional<User> userOptional = this.userService.handleGetUserById(id);
     if (userOptional.isPresent()) {
       model.addAttribute("user", userOptional.get());
       return "admin/user/edit";
@@ -83,7 +83,7 @@ public class UserController {
   }
 
   @RequestMapping(value = "/admin/user/edit/{id}", method = RequestMethod.POST)
-  public String updateUser(@PathVariable("id") Long id, UserEntity user) {
+  public String updateUser(@PathVariable("id") Long id, User user) {
     user.setId(id);
     this.userService.handleSaveUser(user);
     return "redirect:/admin/user";

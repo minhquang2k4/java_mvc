@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import vn.minhquang.laptopshop.entity.UserEntity;
+import vn.minhquang.laptopshop.domain.User;
 import vn.minhquang.laptopshop.repository.UserRepository;
 
 @Service
@@ -19,19 +19,19 @@ public class UserService {
     this.userRepository = userRepository;
   }
 
-  public UserEntity handleSaveUser(UserEntity user) {
+  public User handleSaveUser(User user) {
     return this.userRepository.save(user);
   }
 
-  public List<UserEntity> handleGetAllUsers() {
+  public List<User> handleGetAllUsers() {
     return this.userRepository.findAll();
   }
 
-  public List<UserEntity> handleGetAllUsersByEmail(String email) {
+  public List<User> handleGetAllUsersByEmail(String email) {
     return this.userRepository.findAllByEmail(email);
   }
 
-  public Optional<UserEntity> handleGetUserById(Long id) {
+  public Optional<User> handleGetUserById(Long id) {
     return this.userRepository.findById(id);
   }
 
@@ -39,7 +39,7 @@ public class UserService {
     this.userRepository.deleteById(id);
   }
 
-  public Page<UserEntity> handleGetAllUsersWithPagination(Pageable pageable) {
+  public Page<User> handleGetAllUsersWithPagination(Pageable pageable) {
     return userRepository.findAll(pageable);
   }
 }

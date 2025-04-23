@@ -109,18 +109,20 @@
                 tabindex="${currentPage <= 0 ? '-1' : '0'}" aria-disabled="${currentPage <= 0 ? 'true' : 'false'}">Previous</a>
             </li>
             
-            <c:forEach begin="0" end="${totalPages - 1}" varStatus="loop">
-              <c:choose>
-                <c:when test="${loop.index == currentPage}">
-                  <li class="page-item active"><a class="page-link" href="#">${loop.index + 1}</a></li>
-                </c:when>
-                <c:otherwise>
-                  <li class="page-item">
-                    <a class="page-link" href="/admin/user?page=${loop.index}&size=${pageSize}">${loop.index + 1}</a>
-                  </li>
-                </c:otherwise>
-              </c:choose>
-            </c:forEach>
+            <c:if test="${totalPages > 0}">
+              <c:forEach begin="0" end="${totalPages - 1}" varStatus="loop">
+                <c:choose>
+                  <c:when test="${loop.index == currentPage}">
+                    <li class="page-item active"><a class="page-link" href="#">${loop.index + 1}</a></li>
+                  </c:when>
+                  <c:otherwise>
+                    <li class="page-item">
+                      <a class="page-link" href="/admin/user?page=${loop.index}&size=${pageSize}">${loop.index + 1}</a>
+                    </li>
+                  </c:otherwise>
+                </c:choose>
+              </c:forEach>
+            </c:if>
             
             <li class="page-item ${currentPage >= totalPages - 1 ? 'disabled' : ''}">
               <a class="page-link" href="${currentPage >= totalPages - 1 ? '#' : '/admin/user?page='.concat(currentPage+1).concat('&size=').concat(pageSize)}" 
