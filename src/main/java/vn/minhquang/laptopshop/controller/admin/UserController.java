@@ -1,4 +1,4 @@
-package vn.minhquang.laptopshop.controller;
+package vn.minhquang.laptopshop.controller.admin;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -45,7 +45,7 @@ public class UserController {
     model.addAttribute("totalItems", userPage.getTotalElements());
     model.addAttribute("pageSize", size);
     
-    return "admin/user/table-user";
+    return "admin/user/show";
   }
 
   @RequestMapping("/admin/user/create")
@@ -65,7 +65,7 @@ public class UserController {
     Optional<User> userOptional = this.userService.handleGetUserById(id);
     if (userOptional.isPresent()) {
       model.addAttribute("user", userOptional.get());
-      return "admin/user/view";
+      return "admin/user/detail";
     } else {
       return "redirect:/admin/user";
     }
